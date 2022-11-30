@@ -1,0 +1,22 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+    "name": "r567tw-codespaces",
+    "workspaceFolder": "/workspace",
+    "extensions": [
+        // "editorconfig.editorconfig",
+        // "ryannaddy.laravel-artisan",
+        // "amiralizadeh9480.laravel-extra-intellisense",
+        // "stef-k.laravel-goto-controller",
+        // "codingyu.laravel-goto-view",
+        // "mikestead.dotenv",
+        // "eg2.tslint",
+        // "christian-kohler.path-intellisense",
+        // "esbenp.prettier-vscode",
+        // "CoenraadS.bracket-pair-colorizer"
+    ],
+    "settings": {
+        "#terminal.integrated.shell.linux": "/bin/bash"
+    },
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": ""
+}
