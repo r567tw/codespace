@@ -1,0 +1,3 @@
+*.sql
+.env
+helpers/__pycache__/*

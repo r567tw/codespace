@@ -4,8 +4,7 @@ import os
 from bs4 import BeautifulSoup
 
 # init
-if os.path.exists('content.txt'):
-    os.remove('content.txt')
+os.remove('content.txt')
 
 
 url = "https://astro.click108.com.tw/daily_8.php?iAstro=8"
@@ -15,14 +14,12 @@ today = datetime.now()
 for i in range(7):
     dayX = (today+timedelta(days=i))
     dateString = dayX.strftime("%Y-%m-%d")
-    weekString = dayX.strftime("%A")
     print(dateString)
     response = requests.get(f'{url}&iAcDay={dateString}')
     soup = BeautifulSoup(response.text, "html.parser")
     # print(soup.prettify())  # 輸出排版後的HTML內容
     today_content = soup.find("div", class_="TODAY_CONTENT")
     with open('content.txt', "a") as f:
-        f.write(f'{dateString} {weekString}')
+        f.write(f'{dateString} {dayX.strftime("%A")}')
         f.write(today_content.get_text())
-    if (weekString == 'Sunday'):
-        break
+
