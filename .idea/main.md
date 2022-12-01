@@ -1,0 +1,2 @@
+- [ ] Batch rename files
+- [ ] Create test files or images

@@ -25,12 +25,13 @@ else:
 cursor = connection.cursor(pymysql.cursors.DictCursor)
 # 連線資料庫結束
 
-#SQL語法
+# SQL語法
 sql = "select id,imgCover from ear.channels where imgCover is not null"
-#執行語法
+# 執行語法
 cursor.execute(sql)
 #獲得結果
 results = cursor.fetchall()
+# result = cursor.fetchone()
 
 # 打開檔案紀錄
 logs = open('log','w')
