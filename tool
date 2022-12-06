@@ -1,3 +1,4 @@
+# ! bin/bash
 case "$1" in
   local)
     docker build . -t r567tw_workspace:latest
