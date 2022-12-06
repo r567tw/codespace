@@ -1,6 +1,6 @@
-FROM alpine
+FROM alpine:latest
 
-WORKDIR /workspace
+WORKDIR /
 
 COPY templates ./templates
 COPY playground ./playground
@@ -15,7 +15,7 @@ RUN apk add php php-fpm php-pcntl php-json php-intl php-posix php-curl php-ctype
 # copy composer file
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 # composer global require laravel/installer
-
+RUN mkdir -p /workspace
 # supervisord : from-https://stackoverflow.com/questions/63608075/userwarning-supervisord-is-running-as-root-and-it-is-searching-for-its-configur
 RUN echo user=root >>  /etc/supervisord.conf
 CMD ["/usr/bin/supervisord","-n"]

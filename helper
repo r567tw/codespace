@@ -1,0 +1,25 @@
+# ! bin/bash
+case "$1" in
+  build)
+    docker build . -t r567tw/codespace:latest
+    ;;
+  push)
+    docker push r567tw/codespace:latest
+    ;;
+  rm)
+    docker rm -f workspace
+    ;;
+  run)
+    docker run -d --rm -v $(pwd)/workspace:/workspace --name workspace r567tw/codespace:latest
+    ;;
+  shell)
+    docker exec -it workspace /bin/sh
+    ;;
+  test)
+    echo "test"
+    ;;
+  *)
+    echo "Usage: $0 {build|push|rm|run|shell|test}"
+    ;;
+esac
+  
