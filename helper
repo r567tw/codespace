@@ -10,7 +10,7 @@ case "$1" in
     docker rm -f workspace
     ;;
   run)
-    docker run -d --rm -v $(pwd)/workspace:/workspace --name workspace r567tw/codespace:latest
+    docker run -d --rm -p 8000:8000 -v $(pwd)/workspace:/workspace --name workspace r567tw/codespace:latest
     ;;
   shell)
     docker exec -it workspace /bin/sh
